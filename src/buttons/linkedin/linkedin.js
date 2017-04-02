@@ -1,3 +1,2 @@
-import Button from './linkedin
-.vue'
+import Button from './linkedin.vue'
 export default Button

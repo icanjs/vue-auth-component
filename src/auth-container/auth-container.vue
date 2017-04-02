@@ -2,6 +2,7 @@
 <div class='vue-auth-component'>
   <div class='auth-ui-container'>
     <slot></slot>
+		
   </div>
 </div>
 </template>
