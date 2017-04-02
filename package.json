@@ -1,6 +1,6 @@
 {
   "name": "vue-auth-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Compose a clean Auth UI with these Vue.js components",
   "homepage": "https://github.com/icanjs/vue-auth-component",
   "repository": {
