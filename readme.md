@@ -17,7 +17,7 @@ The CanJS Stache version: https://github.com/icanjs/can-auth-component
 import Vue from 'vue/dist/vue'
 
 import AuthContainer from './auth-container/auth-container'
-// import Tabs from './tabs/can-route'
+import AuthTabs from './tabs/tabs'
 import FacebookButton from './buttons/facebook/'
 import GithubButton from './buttons/github/'
 import GoogleButton from './buttons/google/'
@@ -53,7 +53,7 @@ let app = new Vue({
   },
   components: {
     AuthContainer,
-    // Tabs,
+    AuthTabs,
     FacebookButton,
     GithubButton,
     GoogleButton,
@@ -236,9 +236,36 @@ If you don't specify a `text` attribute, you'll get a square button with an icon
 ![AuthComponent Buttons Demo](https://cloud.githubusercontent.com/assets/128857/21478412/70751af8-cb08-11e6-8305-807c6fd0777b.jpg)
 
 ## Tabs
+A simple tabs widget for switching between the login and signup forms is included.  It requires that you pass the `active-tab` and `on-click` attributes in order to work:
 
-**Not yet implemented.**
+```vue
+<template>
+  <auth-tabs :active-tab="activeTab" :on-click="handleTabClick"></auth-tabs>
 
+  <login-form v-show="activeTab === 'login'"></login-form>
+  <signup-form v-show="activeTab === 'signup'"></signup-form>
+</template>
+
+<script>
+  import { AuthTabs } from 'vue-auth-component'
+
+  export default {
+    data () {
+      return {
+        activeTab: 'signup'
+      }
+    },
+    methods: {
+      handleTabClick (name) {
+        this.activeTab = name;
+      }
+    },
+    components: {
+      AuthTabs
+    }
+  }
+</script>
+```
 
 ## Changelog
 - `0.0.1` - Initial release

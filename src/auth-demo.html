@@ -20,6 +20,7 @@
     </style>
     <div id="app">
       <auth-container>
+        <auth-tabs :on-click="setActiveTab" :active-tab="activeTab"></auth-tabs>
 
         <div class='auth-branding'>
           <div class="svg" v-html="logo"></div>
@@ -33,7 +34,8 @@
           <twitter-button popup></twitter-button>
         </div>
 
-        <login-form></login-form>
+        <login-form v-show="activeTab === 'login'"></login-form>
+        <signup-form v-show="activeTab === 'signup'"></signup-form>
       </auth-container>
     </div>
     <script src="/node_modules/steal/steal.js" main="vue-auth-component/auth-demo"></script>    

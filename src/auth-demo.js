@@ -1,7 +1,7 @@
 import Vue from 'vue/dist/vue'
 
 import AuthContainer from './auth-container/auth-container'
-// import Tabs from './tabs/can-route'
+import AuthTabs from './tabs/tabs'
 import FacebookButton from './buttons/facebook/'
 import GithubButton from './buttons/github/'
 import GoogleButton from './buttons/google/'
@@ -32,12 +32,18 @@ let app = new Vue({
     return {
       dummyService,
       feathersClient,
-      logo
+      logo,
+      activeTab: 'signup'
+    }
+  },
+  methods: {
+    setActiveTab (name) {
+      this.activeTab = name
     }
   },
   components: {
     AuthContainer,
-    // Tabs,
+    AuthTabs,
     FacebookButton,
     GithubButton,
     GoogleButton,
