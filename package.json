@@ -1,7 +1,7 @@
 {
   "name": "vue-auth-component",
   "version": "0.0.1",
-  "description": "Clean authentication components for React",
+  "description": "Compose a clean Auth UI with these Vue.js components",
   "homepage": "https://github.com/icanjs/vue-auth-component",
   "repository": {
     "type": "git",
