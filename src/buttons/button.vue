@@ -1,5 +1,5 @@
 <template>
-<button 
+<button
   :class="['auth-button', btnClass]"
   :title="title">
     <a :href="url" @click.prevent="openPopup(url)" >

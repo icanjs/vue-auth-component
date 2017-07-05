@@ -1,75 +1,59 @@
 {
   "name": "vue-auth-component",
-  "version": "0.0.4",
   "description": "Compose a clean Auth UI with these Vue.js components",
-  "homepage": "https://github.com/icanjs/vue-auth-component",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/icanjs/vue-auth-component.git"
-  },
+  "version": "0.0.5",
   "author": {
     "name": "Marshall Thompson",
-    "email": "marshall@creativeideal.net",
-    "url": "https://github.com/marshallswain"
+    "email": "marshall@creativeideal.net"
   },
-  "scripts": {
-    "prepublish": "npm run build",
-    "publish": "git push origin --tags && git push origin",
-    "testee": "testee test/test.html --browsers firefox",
-    "test": "npm run lint && npm run testee",
-    "lint": "standard --fix",
-    "release:patch": "npm version patch && npm publish",
-    "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish",
-    "build": "node build.js",
-    "document": "documentjs",
-    "develop": "done-serve --static --develop --port 8080"
-  },
-  "main": "dist/cjs/vue-auth-component",
   "keywords": [
     "vue",
-    "component",
-    "authentication"
+    "vuejs",
+    "plugin"
   ],
-  "steal": {
-    "main": "vue-auth-component",
-    "configDependencies": [
-      "live-reload"
-    ],
-    "npmIgnore": [
-      "documentjs",
-      "testee",
-      "generator-donejs",
-      "donejs-cli",
-      "steal-tools"
-    ],
-    "plugins": [
-      "steal-css",
-      "steal-less",
-      "steal-vue",
-      "steal-svg"
-    ],
-    "directories": {
-      "lib": "src"
-    }
+  "license": "MIT",
+  "main": "dist/vue-auth-component.common.js",
+  "unpkg": "dist/vue-auth-component.browser.js",
+  "module": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --config config/webpack.config.dev.js --progress --watch",
+    "build": "npm run build:browser && npm run build:common",
+    "build:browser": "cross-env NODE_ENV=production webpack --config config/webpack.config.browser.js --progress --hide-modules",
+    "build:common": "cross-env NODE_ENV=production webpack --config config/webpack.config.common.js --progress --hide-modules",
+    "lint": "standard",
+    "prepublish": "npm run build"
   },
-  "dependencies": {
-    "feathers-authentication-popups": "^0.1.2",
-    "lodash.debounce": "^4.0.8",
-    "lodash.isequal": "^4.5.0"
+  "standard": {
+    "ignore": [
+      "/dist/",
+      "/config",
+      "index.js"
+    ]
   },
   "devDependencies": {
-    "assert": "^1.4.1",
-    "done-serve": "^0.2.0",
-    "standard": "^9.0.2",
-    "steal": "^1.3.2",
-    "steal-css": "^1.2.1",
-    "steal-less": "^1.2.0",
-    "steal-mocha": "^1.0.0",
-    "steal-svg": "^0.0.5",
-    "steal-tools": "^1.2.0",
-    "steal-vue": "^0.0.6",
-    "testee": "^0.3.0",
-    "vue": "^2.2.5"
+    "babel-core": "^6.0.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.1.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-html": "^3.0.0",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "less": "^2.7.1",
+    "less-loader": "^4.0.4",
+    "svg-inline-loader": "^0.7.1",
+    "vue": "^2.3.4",
+    "vue-loader": "^13.0.0",
+    "vue-template-compiler": "^2.1.6",
+    "webpack": "^3.0.0",
+    "webpack-merge": "^4.1.0"
   }
 }

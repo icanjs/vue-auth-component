@@ -15,7 +15,7 @@ import StackOverflowButton from './stackoverflow/stackoverflow.vue'
 import TwitterButton from './twitter/twitter.vue'
 import YahooButton from './yahoo/yahoo.vue'
 
-let app = new Vue({
+new Vue({ // eslint-disable-line no-new
   el: '#app',
   components: {
     AmazonButton,

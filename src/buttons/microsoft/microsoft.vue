@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import AuthButton from '../Button.vue'
+import AuthButton from '../button.vue'
 import svg from './microsoft.svg'
 
 export default {
@@ -28,7 +28,7 @@ export default {
       type: String,
       default: '/auth/microsoft'
     },
-    img: String, 
+    img: String,
     alt: String,
     text: String,
     popup: Boolean
@@ -45,7 +45,7 @@ export default {
   > * {
     color: white;
   }
-				
+
   /* This shouldn't know about its implementation.  Move this somewhere else. */
   &.one {
     width: 153px;

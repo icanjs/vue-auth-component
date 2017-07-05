@@ -9,8 +9,10 @@
 </template>
 
 <script>
-import AuthButton from '../Button.vue'
+import AuthButton from '../button.vue'
 import svg from './github.svg'
+
+console.log('SVG', svg)
 
 export default {
   name: 'github-button',
@@ -28,7 +30,7 @@ export default {
       type: String,
       default: '/auth/github'
     },
-    img: String, 
+    img: String,
     alt: String,
     text: String,
     popup: Boolean
