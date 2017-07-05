@@ -1,7 +1,7 @@
 {
   "name": "vue-auth-component",
   "description": "Compose a clean Auth UI with these Vue.js components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": {
     "name": "Marshall Thompson",
     "email": "marshall@creativeideal.net"
