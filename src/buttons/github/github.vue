@@ -12,8 +12,6 @@
 import AuthButton from '../button.vue'
 import svg from './github.svg'
 
-console.log('SVG', svg)
-
 export default {
   name: 'github-button',
   data () {
